@@ -1,0 +1,6 @@
+export PATH="$PATH:$HOME/.local/bin"
+
+export GNUPGHOME="$HOME/.config/gnupg"
+export ANDROID_PREFS_ROOT="$HOME/.config/android"
+export GRADLE_USER_HOME="$HOME/.config/gradle"
+

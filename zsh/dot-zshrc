@@ -1,0 +1,28 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+unsetopt beep
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/jhamba/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+ZSH_AUTOSUGGEST_STRATEGY=(completion)
+
+eval "$(oh-my-posh init zsh -c ~/.config/oh-my-posh/chemist013.omp.json)"
+eval "$(zoxide init zsh --cmd cd)"
+eval "$(fzf --zsh)"
+
+alias sudo="sudo "
+alias ls="eza --group-directories-first --smart-group"
+alias la="eza --group-directories-first --smart-group -a"
+alias ll="eza --group-directories-first --smart-group -l"
+alias cat="bat"
+alias find="fd"
+alias grep="rg"
+alias zed="zeditor -n"

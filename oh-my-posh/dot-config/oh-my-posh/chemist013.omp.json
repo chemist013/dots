@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "final_space": true,
+  "shell_integration": true,
+  "enable_cursor_positioning": true,
+  "async": false,
+  "version": 4,
+
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "white",
+          "display_root": true,
+          "template": "<b>{{ .UserName }}</b> "
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "red",
+          "options": {
+            "branch_icon": "",
+            "commit_icon": "\udb81\udf18"
+          },
+          "template": "{{ .HEAD }} "
+        },
+
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "white",
+          "options": {
+            "style": "mixed",
+            "mixed_threshold": 10,
+            "mapped_locations": {
+              "//wsl.localhost/*": "/"
+            }
+          },
+          "template": "{{ .Path }}"
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if .Error }}red{{ else }}white{{ end }}"
+          ],
+          "options": {
+            "always_enabled": true
+          },
+          "template": ">"
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "alignment": "right",
+      "background": "transparent",
+      "foreground": "white",
+      "segments": [
+        {
+          "type": "session",
+          "style": "plain",
+          "template": "{{ if .SSHSession }}\ueea7{{ end }} "
+        }
+      ]
+    }
+  ],
+
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "white",
+    "template": "> "
+  }
+}
